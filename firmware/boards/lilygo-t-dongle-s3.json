@@ -1,0 +1,62 @@
+{
+    "build": {
+        "arduino":{
+            "ldscript": "esp32s3_out.ld",
+            "memory_type": "qio_opi"
+        },
+        "partitions": "boards/flash-16mb.csv",
+        "filesystem": "fatfs",
+        "core": "esp32",
+        "extra_flags": [
+            "-DARDUINO_USB_MODE=1",
+            "-DARDUINO_USB_CDC_ON_BOOT=1",
+            "-DPIN_BUTTON=0",
+            "-DPIN_LED_DI=40",
+            "-DPIN_LED_CI=39",
+            "-DPIN_LCD_CS=4",
+            "-DPIN_LCD_SDA=3",
+            "-DPIN_LCD_SCL=5",
+            "-DPIN_LCD_DC=2",
+            "-DPIN_LCD_RES=1",
+            "-DPIN_LCD_BL=38",
+            "-DPIN_SDCARD_D0=14",
+            "-DPIN_SDCARD_D1=17",
+            "-DPIN_SDCARD_D2=21",
+            "-DPIN_SDCARD_D3=18",
+            "-DPIN_SDCARD_CLK=12",
+            "-DPIN_SDCARD_CMD=16"
+        ],
+        "f_cpu": "240000000L",
+        "f_flash": "80000000L",
+        "flash_mode": "qio",
+        "hwids": [
+            [
+                "0x1A86",
+                "0x7523"
+            ]
+        ],
+        "mcu": "esp32s3",
+        "variant": "esp32s3"
+    },
+    "connectivity": [
+        "wifi",
+        "bluetooth"
+    ],
+    "debug": {
+        "openocd_target": "esp32s3.cfg"
+    },
+    "frameworks": [
+        "arduino",
+        "espidf"
+    ],
+    "name": "LILYGO® T-Dongle S3",
+    "upload": {
+        "flash_size": "16MB",
+        "maximum_ram_size": 327680,
+        "maximum_size": 16777216,
+        "require_upload_port": true,
+        "speed": 921600
+    },
+    "url": "https://lilygo.cc/products/t-dongle-s3",
+    "vendor": "LILYGO®"
+}
