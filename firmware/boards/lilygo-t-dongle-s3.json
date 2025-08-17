@@ -9,7 +9,7 @@
         "core": "esp32",
         "extra_flags": [
             "-DARDUINO_USB_MODE=1",
-            "-DARDUINO_USB_CDC_ON_BOOT=1",
+            "-DARDUINO_USB_CDC_ON_BOOT=0",
             "-DPIN_BUTTON=0",
             "-DPIN_LED_DI=40",
             "-DPIN_LED_CI=39",
