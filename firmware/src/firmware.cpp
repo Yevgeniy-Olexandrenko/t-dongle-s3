@@ -195,7 +195,7 @@ void setup()
     Serial.begin(115200);
     delay(3000);
 
-    backlight_on(5);
+    backlight_on(100);
 
     tft.init();
     tft.setRotation(1);

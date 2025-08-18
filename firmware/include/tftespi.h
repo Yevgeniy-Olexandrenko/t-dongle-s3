@@ -11,6 +11,7 @@
 #define TFT_RGB_ORDER TFT_BGR
 
 // spi bus configuration
+#define USE_FSPI_PORT
 #define SPI_FREQUENCY 50000000
 
 // display connection
