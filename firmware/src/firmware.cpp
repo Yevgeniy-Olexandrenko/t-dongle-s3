@@ -176,12 +176,23 @@
 //     delay(5);
 // }
 
+#if USE_LGFX
+#include "display.h"
+#else
 #include <TFT_eSPI.h>
+#endif
+
 #include "girl.h"
 #include "logo.h"
 #include "logo2.h"
 
+#define BACKLIGHT_PERCENT 10
+
+#if USE_LGFX
+LGFX tft = LGFX();
+#else
 TFT_eSPI tft = TFT_eSPI();
+#endif
 
 void backlight_on(uint8_t value) 
 {
@@ -195,7 +206,11 @@ void setup()
     Serial.begin(115200);
     delay(3000);
 
-    backlight_on(100);
+    #if USE_LGFX
+    tft.setBrightness((BACKLIGHT_PERCENT * 255) / 100);
+    #else
+    backlight_on((BACKLIGHT_PERCENT * 255) / 100);
+    #endif
 
     tft.init();
     tft.setRotation(1);
@@ -223,5 +238,7 @@ void loop()
     default:
         break;
     }
+
+    tft.drawRect(0, 0, 160, 80, TFT_WHITE);
     delay(2000);
 }
