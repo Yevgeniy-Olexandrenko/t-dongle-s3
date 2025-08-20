@@ -177,7 +177,7 @@
 // }
 
 #if USE_LGFX
-#include "display.h"
+#include "drivers/display.h"
 #else
 #include <TFT_eSPI.h>
 #endif
@@ -189,7 +189,7 @@
 #define BACKLIGHT_PERCENT 10
 
 #if USE_LGFX
-LGFX tft = LGFX();
+driver::Display tft = driver::Display();
 #else
 TFT_eSPI tft = TFT_eSPI();
 #endif
